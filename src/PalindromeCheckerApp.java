@@ -16,6 +16,16 @@ public class PalindromeCheckerApp {
         }
         System.out.println("Input text: " + input);
         System.out.println("Is it a Palindrome?: " + isPalindrome);
+
+        //UseCase3
+        String input1 = "madam";
+        String reversed = "";
+        for (int i = input.length() - 1; i >= 0; i--) {
+            reversed = reversed + input.charAt(i);
+        }
+        boolean issPalindrome = input.equals(reversed);
+        System.out.println("Input text: " + input);
+        System.out.println("Is it a Palindrome?: " + issPalindrome);
     }
 }
 
