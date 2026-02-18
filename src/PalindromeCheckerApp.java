@@ -1,6 +1,7 @@
 import java.util.Stack;
 import java.util.Queue;
 import java.util.LinkedList;
+import java.util.Deque;
 public class PalindromeCheckerApp {
     public static void main(String[] args) {
         System.out.println("Welcome to the Palindrome Checker Management System");
@@ -83,6 +84,25 @@ public class PalindromeCheckerApp {
         }
         System.out.println("Input : " + input5);
         System.out.println("Is Palindrome? : " + is3Palindrome);
+
+        //UseCase7
+        String text = "refer";
+        Deque<Character> dq = new LinkedList<>();
+        for (char ch : text.toCharArray()) {
+            dq.addLast(ch);
+        }
+        boolean result = true;
+        while (dq.size() > 1) {
+            char frontChar = dq.removeFirst();
+            char rearChar = dq.removeLast();
+
+            if (frontChar != rearChar) {
+                result = false;
+                break;
+            }
+        }
+        System.out.println("Input : " + text);
+        System.out.println("Is Palindrome? : " + result);
     }
 }
 
