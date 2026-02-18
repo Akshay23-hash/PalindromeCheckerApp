@@ -18,7 +18,7 @@ public class PalindromeCheckerApp {
         System.out.println("Is it a Palindrome?: " + isPalindrome);
 
         //UseCase3
-        String input1 = "madam";
+        String input1 = "malayalam";
         String reversed = "";
         for (int i = input.length() - 1; i >= 0; i--) {
             reversed = reversed + input.charAt(i);
@@ -26,8 +26,27 @@ public class PalindromeCheckerApp {
         boolean issPalindrome = input.equals(reversed);
         System.out.println("Input text: " + input);
         System.out.println("Is it a Palindrome?: " + issPalindrome);
+
+        //Usecase4
+
+        String input3 = "radar";
+        char[] chars = input.toCharArray();
+        int start = 0;
+        int end = chars.length - 1;
+        boolean is1Palindrome = true;
+        while (start < end) {
+            if (chars[start] != chars[end]) {
+                is1Palindrome = false;
+                break;
+            }
+            start++;
+            end--;
+        }
+        System.out.println("Input : " + input3);
+        System.out.println("Is Palindrome? : " + is1Palindrome);
     }
 }
+
 
 
 
