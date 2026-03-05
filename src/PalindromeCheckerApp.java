@@ -23,7 +23,6 @@ public class PalindromeCheckerApp {
         System.out.println("Input text: " + input);
         System.out.println("Is it a Palindrome?: " + isPalindrome);
 
-
         //UseCase3
         String input1 = "malayalam";
         String reversed = "";
@@ -33,7 +32,6 @@ public class PalindromeCheckerApp {
         boolean issPalindrome = input1.equals(reversed);
         System.out.println("Input text: " + input1);
         System.out.println("Is it a Palindrome?: " + issPalindrome);
-
 
         //Usecase4
         String input3 = "radar";
@@ -54,7 +52,6 @@ public class PalindromeCheckerApp {
         System.out.println("Input : " + input3);
         System.out.println("Is Palindrome? : " + is1Palindrome);
 
-
         //UseCase5
         String input4 = "noon";
         Stack<Character> stack = new Stack<>();
@@ -73,7 +70,6 @@ public class PalindromeCheckerApp {
 
         System.out.println("Input : " + input4);
         System.out.println("Is Palindrome? : " + is2Palindrome);
-
 
         //UseCase6
         String input5 = "civic";
@@ -97,7 +93,6 @@ public class PalindromeCheckerApp {
         System.out.println("Input : " + input5);
         System.out.println("Is Palindrome? : " + is3Palindrome);
 
-
         //UseCase7
         String text = "refer";
         Deque<Character> dq = new LinkedList<>();
@@ -120,7 +115,6 @@ public class PalindromeCheckerApp {
 
         System.out.println("Input : " + text);
         System.out.println("Is Palindrome? : " + result);
-
 
         //UseCase8
         String input6 = "level";
@@ -184,7 +178,6 @@ public class PalindromeCheckerApp {
         System.out.println("Input : " + input6);
         System.out.println("Is Palindrome? : " + is4Palindrome);
 
-
         //UseCase9 (Recursion)
         String input7 = "madam";
 
@@ -193,6 +186,27 @@ public class PalindromeCheckerApp {
         System.out.println("Input : " + input7);
         System.out.println("Is Palindrome? : " + is5Palindrome);
 
+        //UseCase10 (Ignore spaces & case)
+        String input8 = "A man a plan a canal Panama";
+
+        String normalized = input8.replaceAll("\\s+", "").toLowerCase();
+
+        boolean is6Palindrome = true;
+        int left = 0;
+        int right = normalized.length() - 1;
+
+        while (left < right) {
+            if (normalized.charAt(left) != normalized.charAt(right)) {
+                is6Palindrome = false;
+                break;
+            }
+            left++;
+            right--;
+        }
+
+        System.out.println("Original Input : " + input8);
+        System.out.println("Normalized Input : " + normalized);
+        System.out.println("Is Palindrome? : " + is6Palindrome);
     }
 
     public static boolean isPalindromeRecursive(String str, int start, int end) {
